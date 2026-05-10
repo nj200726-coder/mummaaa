@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Mother’s Day ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #ffe6f0, #fff7e6, #e6f7ff);
+        overflow-x: hidden;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    header {
+        text-align: center;
+        padding: 60px 20px 20px;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+        color: #d63384;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #555;
+        font-size: 1.1rem;
+    }
+
+    /* 💌 typing */
+    .typing {
+        font-size: 2.2rem;
+        color: #b5179e;
+        font-weight: bold;
+        margin-top: 15px;
+        min-height: 50px;
+    }
+
+    /* 💖 notes */
+    .notes {
+        max-width: 900px;
+        margin: auto;
+        padding: 40px 20px;
+    }
+
+    .note {
+        background: rgba(255,255,255,0.9);
+        padding: 30px;
+        margin-bottom: 25px;
+        border-radius: 25px;
+        font-size: 1.4rem;
+        color: #333;
+        box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        position: relative;
+    }
+
+    .note:hover {
+        transform: translateY(-6px);
+    }
+
+    .note::after {
+        content: "💖";
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 1.5rem;
+    }
+
+    /* 💕 floating hearts */
+    .heart {
+        position: fixed;
+        bottom: -20px;
+        color: #ff4d6d;
+        font-size: 18px;
+        animation: floatUp 7s linear infinite;
+        opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(0); opacity: 0; }
+        10% { opacity: 1; }
+        100% { transform: translateY(-110vh); opacity: 0; }
+    }
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Happy Mother’s Day Mom ❤️</h1>
+    <p>Made with endless love just for you</p>
+    <div class="typing" id="typing"></div>
+</header>
+
+<!-- 💌 notes -->
+<div class="notes">
+    <div class="note">You are my safest place in this world 🌸</div>
+    <div class="note">Your love makes everything beautiful 💖</div>
+    <div class="note">Every moment with you is a blessing 🌷</div>
+    <div class="note">Your smile is my comfort ❤️</div>
+    <div class="note">Thank you for everything you do silently 💕</div>
+    <div class="note">I will always love you endlessly 😊</div>
+</div>
+
+<script>
+    // 💕 floating hearts (more frequent & cute)
+    setInterval(() => {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (10 + Math.random() * 20) + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 7000);
+    }, 200);
+
+    // 💌 typing animation
+    const text = "💌 I love you Mom";
+    let i = 0;
+
+    function type() {
+        if (i < text.length) {
+            document.getElementById("typing").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 120);
+        }
+    }
+
+    type();
+</script>
+
+</body>
+</html>
